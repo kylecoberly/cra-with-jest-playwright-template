@@ -1,0 +1,11 @@
+services:
+  tests:
+    build:
+      context: tests/
+      args:
+        BASE_URL: "http://frontend:3000"
+    volumes:
+      - ./tests:/app
+    depends_on:
+      - frontend
+    command: ["/bin/bash", "entrypoint.sh"]

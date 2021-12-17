@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build:
+      context: frontend/
+      target: base
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: [npm, start]
